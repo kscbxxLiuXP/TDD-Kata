@@ -47,4 +47,11 @@ public class TDD {
         Assert.assertEquals(returnValue, "Hello, Amy, Brian, and Charlotte.");
     }
 
+    @Test
+    public void testMixingOfNormalAndShoutedNames(){
+        String[] names = new String[]{"Amy", "BRIAN", "Charlotte"};
+        Kata kata = new Kata();
+        String returnValue = kata.greet(names);
+        Assert.assertEquals(returnValue,"Hello, Amy and Charlotte. AND HELLO BRIAN!");
+    }
 }

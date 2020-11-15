@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Kata {
 
 
@@ -7,24 +10,46 @@ public class Kata {
         }
         if (name instanceof String) {
             if (((String) name).toUpperCase().equals(name)) {
-                return "HELLO " + name + "!";
+                return greetUpperCase((String) name);
             }
             return "Hello, " + name + ".";
         }
         if (name instanceof String[]) {
-            String[] newV = (String[]) name;
-            //when there are only two elements
-            if (newV.length == 2) {
-                return "Hello, " + newV[0] + " and " + newV[1] + ".";
+            String[] names = (String[]) name;
+            List<String> lowerList = new ArrayList<String>();
+            String upper = null;
+            for(int i = 0;i< names.length;i++){
+                if(names[i].toUpperCase().equals(names[i])){
+                    upper = names[i];
+                }else{
+                    lowerList.add(names[i]);
+                }
             }
-            //when there are more than 2 elements
-            String hello = "Hello, ";
-            for (int i = 0; i < newV.length - 1; i++) {
-                hello = hello + newV[i] + ", ";
+            String returnValue = greetArray((lowerList.toArray(new String[0])));
+            if(upper == null){
+                return returnValue;
+            }else{
+                return returnValue + " AND " + greetUpperCase(upper);
             }
-            return hello + "and " + newV[newV.length - 1] + ".";
         }
         return "";
+    }
 
+    private String greetArray(String[] strings){
+        //when there are only two elements
+        if (strings.length == 2) {
+            return "Hello, " + strings[0] + " and " + strings[1] + ".";
+        }
+        //when there are more than 2 elements
+        String hello = "Hello, ";
+        String upperCase = null;
+        for (int i = 0; i < strings.length - 1; i++) {
+            hello += strings[i] + ", ";
+        }
+        return hello + "and " + strings[strings.length - 1] + ".";
+    }
+
+    private String greetUpperCase(String string){
+        return "HELLO " + string + "!";
     }
 }
