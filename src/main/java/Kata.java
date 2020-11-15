@@ -16,26 +16,29 @@ public class Kata {
         }
         if (name instanceof String[]) {
             String[] names = (String[]) name;
+
+
             List<String> lowerList = new ArrayList<String>();
             String upper = null;
-            for(int i = 0;i< names.length;i++){
-                if(names[i].toUpperCase().equals(names[i])){
+            for (int i = 0; i < names.length; i++) {
+                if (names[i].toUpperCase().equals(names[i])) {
                     upper = names[i];
-                }else{
+                } else {
                     lowerList.add(names[i]);
                 }
             }
             String returnValue = greetArray((lowerList.toArray(new String[0])));
-            if(upper == null){
+            if (upper == null) {
                 return returnValue;
-            }else{
+            } else {
                 return returnValue + " AND " + greetUpperCase(upper);
             }
         }
         return "";
     }
 
-    private String greetArray(String[] strings){
+    private String greetArray(String[] strings) {
+        strings = splitStringWithComma(strings);
         //when there are only two elements
         if (strings.length == 2) {
             return "Hello, " + strings[0] + " and " + strings[1] + ".";
@@ -49,7 +52,18 @@ public class Kata {
         return hello + "and " + strings[strings.length - 1] + ".";
     }
 
-    private String greetUpperCase(String string){
+    private String greetUpperCase(String string) {
         return "HELLO " + string + "!";
+    }
+
+    private String[] splitStringWithComma(String[] names) {
+        List<String> nameList = new ArrayList<String>();
+        for (int i = 0; i < names.length; i++) {
+            String[] splitResult = names[i].split(",");
+            for (String s : splitResult) {
+                nameList.add(s);
+            }
+        }
+        return nameList.toArray(new String[0]);
     }
 }

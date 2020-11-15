@@ -24,7 +24,7 @@ public class TDD {
     }
 
     @Test
-    public void testGreetHandleShouting(){
+    public void testGreetHandleShouting() {
         String name = "JERRY";
         Kata kata = new Kata();
         String returnValue = kata.greet(name);
@@ -32,26 +32,35 @@ public class TDD {
     }
 
     @Test
-    public void testGreetWithTwoElementArray(){
-        String[] names = new String[]{"Jill","Jane"} ;
+    public void testGreetWithTwoElementArray() {
+        String[] names = new String[]{"Jill", "Jane"};
         Kata kata = new Kata();
         String returnValue = kata.greet(names);
         Assert.assertEquals(returnValue, "Hello, Jill and Jane.");
     }
 
     @Test
-    public void testGreetWithArbitraryElementArray(){
-        String[] names = new String[]{"Amy","Brian", "Charlotte"} ;
+    public void testGreetWithArbitraryElementArray() {
+        String[] names = new String[]{"Amy", "Brian", "Charlotte"};
         Kata kata = new Kata();
         String returnValue = kata.greet(names);
         Assert.assertEquals(returnValue, "Hello, Amy, Brian, and Charlotte.");
     }
 
     @Test
-    public void testMixingOfNormalAndShoutedNames(){
+    public void testMixingOfNormalAndShoutedNames() {
         String[] names = new String[]{"Amy", "BRIAN", "Charlotte"};
         Kata kata = new Kata();
         String returnValue = kata.greet(names);
-        Assert.assertEquals(returnValue,"Hello, Amy and Charlotte. AND HELLO BRIAN!");
+        Assert.assertEquals(returnValue, "Hello, Amy and Charlotte. AND HELLO BRIAN!");
     }
+
+    @Test
+    public void testGreetArrayContainsComma() {
+        String[] names = new String[]{"Bob", "Charlie,Dianne"};
+        Kata kata = new Kata();
+        String returnValue = kata.greet(names);
+        Assert.assertEquals(returnValue, "Hello, Bob, Charlie, and Dianne.");
+    }
+
 }
