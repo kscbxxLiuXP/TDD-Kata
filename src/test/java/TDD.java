@@ -1,19 +1,15 @@
 import org.junit.Test;
 
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
-
-import static org.junit.Assert.assertThat;
 
 public class TDD {
 
     @Test
     public void testGreetNormalSingleStringName() {
 
-        String name = "bob";
-        TDD tdd = new Tdd();
-        String returnValue  = tdd.greet(name);
+        String name = "Bob";
+        Kata kata = new Kata();
+        String returnValue  = kata.greet(name);
 
-        assert 
+        assert returnValue.equals("Hello, Bob");
     }
 }
