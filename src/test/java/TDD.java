@@ -8,8 +8,8 @@ public class TDD {
 
         String name = "Bob";
         Kata kata = new Kata();
-        String returnValue  = kata.greet(name);
+        String returnValue = kata.greet(name);
 
-        assert returnValue.equals("Hello, Bob");
+        assert returnValue.equals("Hello, Bob.");
     }
 }
