@@ -12,4 +12,16 @@ public class TDD {
 
         assert returnValue.equals("Hello, Bob.");
     }
+
+    @Test
+    public void testGreetNullSingleStringName() {
+
+        String name = null;
+        Kata kata = new Kata();
+        String returnValue = kata.greet(name);
+
+        assert returnValue.equals("Hello, my friend.");
+    }
+
+
 }
