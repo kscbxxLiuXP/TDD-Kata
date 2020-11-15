@@ -63,4 +63,13 @@ public class TDD {
         Assert.assertEquals(returnValue, "Hello, Bob, Charlie, and Dianne.");
     }
 
+    @Test
+    public void testGreetArrayEscapeIntentionalComma() {
+        String[] names = new String[]{"Bob", "\"Charlie, Dianne\""};
+        Kata kata = new Kata();
+        String returnValue = kata.greet(names);
+        Assert.assertEquals(returnValue, "Hello, Bob and Charlie, Dianne.");
+    }
+
+
 }

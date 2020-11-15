@@ -59,10 +59,16 @@ public class Kata {
     private String[] splitStringWithComma(String[] names) {
         List<String> nameList = new ArrayList<String>();
         for (int i = 0; i < names.length; i++) {
-            String[] splitResult = names[i].split(",");
-            for (String s : splitResult) {
-                nameList.add(s);
+            if (!names[i].contains("\"")){
+                String[] splitResult = names[i].split(",");
+                for (String s : splitResult) {
+                    nameList.add(s);
+                }
+            }else{
+                nameList.add(names[i].substring(1, names[i].length()-1));
+
             }
+
         }
         return nameList.toArray(new String[0]);
     }
