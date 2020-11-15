@@ -1,3 +1,4 @@
+import org.junit.Assert;
 import org.junit.Test;
 
 
@@ -19,8 +20,15 @@ public class TDD {
         String name = null;
         Kata kata = new Kata();
         String returnValue = kata.greet(name);
-
         assert returnValue.equals("Hello, my friend.");
+    }
+
+    @Test
+    public void testGreetHandleShouting(){
+        String name = "JERRY";
+        Kata kata = new Kata();
+        String returnValue = kata.greet(name);
+        Assert.assertEquals(returnValue, "HELLO JERRY!");
     }
 
 
