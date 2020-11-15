@@ -1,9 +1,5 @@
 # Greeting Kata
 
-[Edit](https://github.com/testdouble/contributing-tests/wiki/Greeting-Kata/_edit)[New Page](https://github.com/testdouble/contributing-tests/wiki/_new)
-
-Brandon Duff edited this page on 2 Jul 2019 · [5 revisions](https://github.com/testdouble/contributing-tests/wiki/Greeting-Kata/_history)
-
 # The Greeting Kata
 
 This [Kata](https://en.wikipedia.org/wiki/Kata_(programming)) is designed to help practice what a test of a pure function ought to look like. It is intentionally designed to start with a very easy, non-branching base case which slowly becomes addled with complexity as additional requirements are added that will require significant branching and eventually a pressure to compose additional units.
