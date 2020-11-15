@@ -39,4 +39,12 @@ public class TDD {
         Assert.assertEquals(returnValue, "Hello, Jill and Jane.");
     }
 
+    @Test
+    public void testGreetWithArbitraryElementArray(){
+        String[] names = new String[]{"Amy","Brian", "Charlotte"} ;
+        Kata kata = new Kata();
+        String returnValue = kata.greet(names);
+        Assert.assertEquals(returnValue, "Hello, Amy, Brian, and Charlotte.");
+    }
+
 }
