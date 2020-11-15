@@ -31,5 +31,12 @@ public class TDD {
         Assert.assertEquals(returnValue, "HELLO JERRY!");
     }
 
+    @Test
+    public void testGreetWithTwoElementArray(){
+        String[] names = new String[]{"Jill","Jane"} ;
+        Kata kata = new Kata();
+        String returnValue = kata.greet(names);
+        Assert.assertEquals(returnValue, "Hello, Jill and Jane.");
+    }
 
 }
