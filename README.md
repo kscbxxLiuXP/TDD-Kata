@@ -1,4 +1,16 @@
-# Greeting Kata
+# TDD Kata Assignment
+
+## About
+
+This is the source code of our TDD Kata Assignment for SQAT
+
+We are Group 1 students:
+
+​	刘鑫鹏 LiuXinpeng 20185072
+
+​	曾雨阳 ZengYuyang 20184979
+
+​	朱博韬 ZhuBotao 20185337
 
 # The Greeting Kata
 
